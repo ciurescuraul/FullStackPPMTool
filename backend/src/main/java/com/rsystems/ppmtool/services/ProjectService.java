@@ -53,7 +53,8 @@ public class ProjectService
 
   public void deleteProjectByIdentifier(String projectId)
   {
-    Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
+    Project project = projectRepository
+        .findByProjectIdentifier(projectId.toUpperCase());
 
     if (project == null)
     {
