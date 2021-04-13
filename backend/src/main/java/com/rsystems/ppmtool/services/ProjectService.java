@@ -39,9 +39,15 @@ public class ProjectService
 
     if (project == null)
     {
-      throw new ProjectIdException("Project ID '"+ projectId + "' does not exist");
+      throw new ProjectIdException("Project ID '" + projectId +
+                                   "' does not exist");
     }
 
     return project;
+  }
+
+  public Iterable<Project> findAllProjects()
+  {
+    return projectRepository.findAll();
   }
 }
