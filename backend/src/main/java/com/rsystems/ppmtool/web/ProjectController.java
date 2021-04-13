@@ -2,6 +2,7 @@ package com.rsystems.ppmtool.web;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,14 +20,19 @@ public class ProjectController
 
   private final ProjectService projectService;
 
-  public ProjectController(ProjectService projectService) {
+  public ProjectController(ProjectService projectService)
+  {
     this.projectService = projectService;
   }
 
   @PostMapping
-  public ResponseEntity<Project> createNewProject(@RequestBody @Valid Project project)
+  public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project,
+                                                  BindingResult result)
   {
-    return new ResponseEntity<Project>(projectService
-        .saveOrUpdateProject(project), HttpStatus.CREATED);
+    if (result.hasErrors()){
+      return new ResponseEntity<String>("Invalid Project Object", HttpStatus.BAD_REQUEST);
+    }
+    Project project1 = projectService.saveOrUpdateProject(project);
+    return new ResponseEntity<Project>(project1, HttpStatus.CREATED);
   }
 }
