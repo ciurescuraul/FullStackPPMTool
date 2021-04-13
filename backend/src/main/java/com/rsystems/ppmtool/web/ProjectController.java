@@ -15,7 +15,7 @@ import com.rsystems.ppmtool.services.ProjectService;
 public class ProjectController
 {
 
-  private ProjectService projectService;
+  private final ProjectService projectService;
 
   public ProjectController(ProjectService projectService) {
     this.projectService = projectService;
