@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-primary mb-4">
+    <nav className="navbar navbar-expand-sm mb-4">
       <div className="container">
         <a className="navbar-brand" href="Dashboard.html">
           Personal Project Management Tool
