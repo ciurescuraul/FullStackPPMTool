@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProjectItem = () => {
   return (
@@ -14,24 +15,24 @@ const ProjectItem = () => {
           </div>
           <div className="col-md-4 d-none d-lg-block">
             <ul className="list-group">
-              <a href="#">
+              <Link to="#">
                 <li className="list-group-item board">
                   <i className="fas fa-clipboard-list px-3 fa-1x"></i>
                   Project Board
                 </li>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="#">
                 <li className="list-group-item update">
                   <i className="fa fa-edit px-3 fa-1x"></i>
                   Update Project Info
                 </li>
-              </a>
-              <a href="">
+              </Link>
+              <Link to="">
                 <li className="list-group-item delete">
                   <i className="fa fa-minus-circle px-3 fa-1x"></i>
                   Delete Project
                 </li>
-              </a>
+              </Link>
             </ul>
           </div>
         </div>
