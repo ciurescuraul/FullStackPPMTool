@@ -1,4 +1,5 @@
 import React from "react";
+import CreateProjectButton from "./Project/CreateProjectButton";
 import ProjectItem from "./Project/ProjectItem";
 
 const Dashboard = () => {
@@ -9,9 +10,7 @@ const Dashboard = () => {
           <div className="col-md-12">
             <h4 className="display-4 text-center">List of Projects</h4>
             <br />
-            <a href="ProjectForm.html" className="btn btn-lg btn-info">
-              Create a Project
-            </a>
+            <CreateProjectButton/>
             <br />
             <hr />
             <ProjectItem />
